@@ -1,0 +1,223 @@
+.hero{
+    height: 50%;
+    display: flex;
+}
+.hero__h1-cont{
+    background-color: #f0f8ff;
+    padding-left: var(--padding-bottom-L);
+    display: flex;
+    align-items: center;
+    padding-top: 5rem;
+    padding-bottom: 5rem;
+}
+.hero div{
+    flex: 1;
+}
+.hero figure{
+    height: 100%;
+}
+.hero div h1 {
+    font-size: clamp(3rem, 5vw, 6rem);
+    font-weight: 900;
+}
+
+/* team */
+.team{
+    --team-bg-color: rgb(199, 199, 199);
+    padding: 100px var(--padding-left-L);
+    background-color: var(--team-bg-color);
+    display: flex;
+    flex-direction: column;
+    row-gap: 50px;
+}
+.team h2,
+.testimonia-cont h2{
+    font-size: clamp(2rem, 5vw, 6rem);
+}
+.team .container{
+    display: flex;
+    gap: var(--grid-column-gap);
+    /* background-color: red; */
+    /* padding: 1rem; */
+    /* width: clamp(200px, 60vw, 300px); */
+    justify-content: space-between;
+}
+.team .card{
+    display: flex;
+    background-color: var(--white);
+    justify-content: space-between;
+    align-items: center;
+    border-radius: 8px;
+    height: 150px;
+    flex: 1;
+    gap: .5rem;
+    padding: 1rem;
+}
+
+.card figure{
+    width: min(80px, 200px);
+    height: auto;
+    border-radius: 50%;
+    overflow: hidden;
+}
+.card figure img{
+    border-radius: 50%;
+}
+.card div:nth-child(2){
+    flex: 1;
+}
+
+.card div:nth-child(2) p{
+    font-size: medium;
+    font-weight: 600;
+    color: var(--grey-color)
+}
+.card .add{
+    background-color: var(--team-bg-color);
+    padding: 1rem;
+    border-radius: .4rem;
+}
+.card .add button{
+    color: rgb(187, 187, 187);
+    background-color: rgb(255, 255, 255);
+    border-radius: 50%;
+    width: 20px;
+    height: 20px;
+    border: none;
+    font: inherit;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: var(--hover-transition-timing);
+}
+.card .add button:hover{
+    background-color: black;
+    color: white;
+}
+
+
+
+/* testimonia */
+.testimonia-cont{
+    padding-top: 7rem;
+}
+.testimonia-cont h2{
+    text-align: center;
+    margin-bottom: 30px;
+}
+.testimonia-wrapper{
+    width: 100%;
+    background-color: rgba(173, 95, 95, 0.534);
+}
+.testimonia-card-scroll-bar{
+    color: var(--grey-color);
+    /* background-color: rgba(4, 167, 142, 0.31); */
+    display: flex;
+    overflow: hidden;
+    column-gap: var(--grid-column-gap);
+    width: min(90%, 400px);
+    margin: auto;
+}
+.testimonia-card{
+    /* scroll-margin-left: 2rem; */
+    min-width: 100%;
+    min-height: 100%;
+    background-color: lightblue;
+    display: flex;
+    padding-top: 50px;
+}
+.testimonia-card .quote{
+    position: relative;
+    width: 40%;
+    /* background-color: rgba(70, 157, 73, 0.527); */
+}
+.testimonia-card .quote::before{
+    content: open-quote;
+    position: absolute;
+    top: -50px;
+    left: 0px;
+    font-size: 10rem;
+    color: var(--span-color);
+}
+.text, 
+.customer p{
+    line-height: 30px;
+    font-size: 1.1rem;
+}
+.customer{
+    margin-top: 20px;
+    display: flex;
+    /* justify-content: center; */
+    align-items: center;
+    /* background-color: red; */
+}
+.customer img{
+    width: clamp(50px, 70px, 60px);
+    border-radius: 50%;
+    margin-right: 16px;
+}
+.customer p span.name,
+.customer p span.role{
+    /* font-size: 1.5rem; */
+}
+.customer p span.name{
+    color: rgb(12, 12, 12);
+}
+.customer p span.role{
+    color: var(--grey-color);
+    font-weight: 600;
+}
+
+
+@media (max-width: 900px) {
+    .hero{
+        display: block;
+    }
+    .hero, 
+    .team .container{
+        flex-wrap: wrap;
+    }
+    .team{
+        padding-left: 7rem;
+        padding-right: 7rem;
+    }
+    .team .card{
+        flex-basis: 100%;
+    }
+    .testimonia-wrapper:before{
+        top: -55px;
+        left: 40px;
+    }
+    /* .testimonia-wrapper {
+        padding: 1rem 5rem;
+    } */
+    
+}
+@media (max-width: 700px) {
+    .team{
+        padding-left: 3rem;
+        padding-right: 3rem;
+    }
+}
+
+@media (max-width: 600px) {
+    .team{
+        padding-left: 1rem;
+        padding-right: 1rem;
+    }
+    /* .testimonia-wrapper {
+        padding: 2rem  3rem;
+    } */
+    .testimonia-wrapper:before{
+        top: -50px;
+        left: 10px;
+    } 
+}
+
+
+@media (max-width: 400px) {
+    /* .testimonia-wrapper {
+        padding: 2rem;
+    } */
+    
+}

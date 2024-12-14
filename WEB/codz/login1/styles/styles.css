@@ -1,0 +1,123 @@
+*{
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+:root{
+    --fs: 1rem;
+    --color: rgb(245, 244, 244);
+    --login-h2-color: rgb(0, 37, 100);
+    --padding: 1rem;
+    --timeTaken: 1s;
+}
+body{
+    font-size: 1rem;
+    font-family: Arial, Helvetica, sans-serif;
+
+}
+button{
+    cursor: pointer;
+}
+
+.container{
+    margin: 0 auto;
+    background-color: rgb(228, 228, 228);
+    width: 400px;
+    height: 500px;
+    position: relative;
+    overflow: hidden;
+    box-shadow: 0 0 30px rgb(232, 231, 231);
+    transition: .3s;
+}
+.container--add-buttom-radius{
+    border-bottom-right-radius: 50px;
+}
+
+
+/* || login */
+.login, .sign-in{
+    /* background-color: red; */
+    display: flex;
+    flex-direction: column;
+    /* align-items: center; */
+    padding: var(--padding);
+}
+input{
+    padding: 10px 5px;
+    outline: none;
+    border: none;
+    border-radius: 8px;
+    margin-bottom: 15px;
+}
+#name{
+    margin-bottom: 40px;
+}
+label{
+    opacity: .7;
+    margin-bottom: 5px;
+}
+.sign-in__h2, .login__h2{
+    text-align: center;
+    cursor: pointer;
+    transition: .3s;
+    margin-bottom: 50px;
+}
+.login__h2{
+    color: var(--login-h2-color);
+}
+.login__h2--small{
+    font-size: .9rem;
+}
+
+.submit{
+    /* margin-top: 10px; */
+    padding: .5rem;
+    border: none;
+    color: white;
+    border-radius: 8px;
+    transition: .3s;
+    background-color: green;
+}
+.submit:hover{
+    background-color: #060;
+}
+
+/* || sign in  */
+.show-sign-in{
+    transform: translateY(-50%);
+}
+.hide-sign-in{
+    transform: translateY(100px);
+}
+.sign-in{
+    position: absolute;
+    background-image:linear-gradient(var(--login-h2-color), rgb(5, 90, 99));
+    height: 100%;
+    width: 100%;
+    border: none;
+    border-top-left-radius: 50px;
+    border-top-right-radius: 50px;
+    transition: .5s linear;
+    padding: var(--padding)
+}
+.sign-in label{
+    color: white;
+}
+.sign-in__h2{
+    color: var(--color);
+    font-size: .9rem;
+}
+.sign-in__h2--large{
+    font-size: 1.5rem;
+}
+
+.sign-in-button{
+    background-color: transparent;
+    font-size: inherit;
+    border: none;
+    color: white;
+    transition: .3s;
+}
+.sign-in-button:hover{
+    opacity: .8;
+}

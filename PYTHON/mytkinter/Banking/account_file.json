@@ -1,0 +1,93 @@
+{
+    "45244543": {
+        "initial_deposit": 0, 
+        "balance": 47700, 
+        "name": "daniel ola", 
+        "pasword": 12345, 
+        "account_number": 45244543, 
+        "history": [
+            [
+                "Deposit", 
+                {
+                    "time": "07:10PM", 
+                    "from": null, 
+                    "to": "main account", 
+                    "date": "05-10-2014"
+                }
+            ], 
+            [
+                "Deposit", 
+                {
+                    "time": "07:10PM", 
+                    "from": null, 
+                    "to": "main account", 
+                    "date": "05-10-2014"
+                }
+            ], 
+            [
+                "Withdraw", 
+                {
+                    "time": "07:10PM", 
+                    "from": "Main account", 
+                    "to": null, 
+                    "date": "05-10-2014"
+                }
+            ], 
+            [
+                "Deposit", 
+                {
+                    "time": "12:01AM", 
+                    "from": null, 
+                    "to": "main account", 
+                    "date": "04-01-1980"
+                }
+            ], 
+            [
+                "Withdraw", 
+                {
+                    "time": "12:01AM", 
+                    "from": "Main account", 
+                    "to": null, 
+                    "date": "04-01-1980"
+                }
+            ], 
+            [
+                "Deposit", 
+                {
+                    "time": "12:01AM", 
+                    "from": null, 
+                    "to": "main account", 
+                    "date": "04-01-1980"
+                }
+            ], 
+            [
+                "Withdraw", 
+                {
+                    "time": "12:01AM", 
+                    "from": "Main account", 
+                    "to": null, 
+                    "date": "04-01-1980"
+                }
+            ], 
+            [
+                "Deposit", 
+                {
+                    "time": "12:01AM", 
+                    "from": null, 
+                    "to": "main account", 
+                    "date": "04-01-1980"
+                }
+            ], 
+            [
+                "Withdraw", 
+                {
+                    "time": "12:01AM", 
+                    "from": "Main account", 
+                    "to": null, 
+                    "date": "04-01-1980"
+                }
+            ]
+        ], 
+        "age": 20
+    }
+}

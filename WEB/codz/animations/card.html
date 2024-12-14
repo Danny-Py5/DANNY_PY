@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Blure Card</title>
+
+    <style>
+        body{
+            display: grid;
+            place-content: center;
+            height: 100vh;
+        }
+        .box{
+            width: 350px;
+            height: 200px;
+            padding: 1rem;
+            background-color: rgba(70, 0, 0, 0.472);
+            border-radius: 20px;
+            position: relative;
+            filter: drop-shadow(0 0 10px rgb(255, 254, 179));
+            transform: skewX(5deg);
+            transition: .2s linear;
+        }
+        .child-one, 
+        .child-two{
+            width: 100px;
+            height: 100px;
+            border-radius: 50%;
+            position: absolute;
+            filter: blur(10px) opacity(.9);
+        }
+
+        .child-one{
+            background-color: rgba(246, 78, 78, 0.533);
+            top:  -20px;
+            left:  -20px;
+        }
+        
+        .child-two{
+            bottom: -20px;
+            right: -20px;
+            background-color: rgba(64, 215, 64, 0.436);
+        }
+        .box:hover{
+            transform: skewX(0) scale(1.05);
+            box-shadow: 0 0 10px rgb(162, 159, 159);
+        }
+        h2{
+            color: white;
+            text-align: center;
+        }
+        p{
+            color: rgb(226, 226, 226);
+        }
+    </style>
+</head>
+<body>
+    <section class="box">
+        <div class="child-one"></div>
+        <div class="child-two"></div>
+
+        <section class="text">
+            <h2>Card</h2>
+            <p>
+                Lorem ipsum dolor sit amet consectetur adipisicing elit. Ea maxime alias, recusandae ullam sit dolor voluptatem iusto possimus magnam totam quis, asperiores a natus nulla magni numquam excepturi! Animi, beatae!
+            </p>
+        </section>
+    </section>
+</body>
+</html>

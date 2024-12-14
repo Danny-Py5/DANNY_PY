@@ -1,0 +1,107 @@
+*{
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+:root{
+    --clock-width: 200px;
+}
+
+/* css utility */
+.center{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+html{
+    font-family: Tahoma;
+}
+
+h2{
+    margin-bottom: 20px;
+    color:rgb(243, 180, 121);
+}
+
+body{
+    background-color: #aaa;
+    width: 100vw;
+    height: 100vh;
+    row-gap: 100px;
+    /* background-color: red; */
+}
+
+.digital-clock-cont{
+    border: 1px;
+    border-radius: 10px;
+    box-shadow: 0 0 20px #1e1d1da1;
+    background-color: rgba(0, 149, 17, 0.722);
+    padding: 1rem;
+    width: 350px;
+}
+
+.digital-clock{
+    font-size: 30px;    
+    font-weight: 900;
+    margin-bottom: 10px;
+}
+.set-time__p{
+    font-size: 13px;
+    margin-bottom: 10px;
+}
+input{
+    width: 45px;
+    border: none;
+    border-radius: 10px;
+    padding: 2px 3px;
+    outline: none;
+    box-shadow: inset 0 2px 5px #5c5c5c88;
+}
+.set{
+    padding: 7px 15px;
+    border: none;
+    border-radius: 10px;
+    width: 100%;
+    transition: .2s;
+    font: inherit;
+    background-color: #ccc;
+}
+.set:hover{
+    background-color: #bbb;
+}
+.set:active{
+    background-color: #aaa;
+}
+
+ 
+/* Analogue clock */
+
+.analogue-clock{
+    width: var(--clock-width);
+    height: 200px;
+    padding: 5px;
+    border: 3px solid #00ecf5;
+    /* outline: 2px solid red;
+    outline-offset: -8px; */
+    border-radius: 100px;
+    background-color: rgb(0, 69, 8);
+    position: relative;
+}
+
+.hand{
+    width: 3px;
+    height: calc((var(--clock-width) / 2) - 20px);
+    background-color: #00ecf5;
+    position: absolute;
+    bottom: calc(var(--clock-width) / 2);
+    right:  calc((var(--clock-width) / 2) - 5px);
+    transform: rotate(var(--rotate-angle));
+    transform-origin: bottom;
+    transition: .2s;
+}
+
+
+
+

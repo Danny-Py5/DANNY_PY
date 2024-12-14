@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Table</title>
+
+    <style>
+        *{
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+        table{
+            border-collapse: collapse;
+        }
+        thead{
+            background-color: rgb(255, 136, 0);
+            color: white;
+        }
+        tr, td{
+            border-bottom: 1px solid black;
+            padding: 5px 2rem;
+        }
+    </style>
+</head>
+<body>
+    
+
+    <table>
+        <caption>Student Data</caption>
+
+        <colgroup>
+            <col span="1" style="background-color:rgba(197, 170, 170, 0.519)">
+
+            <col span="2">
+            <col span="4" style="background-color: rgba(0, 191, 255, 0.545);">
+        </colgroup>
+        <thead>
+            <tr>
+                <th>Name</th>
+                <th>Age</th>
+                <th>Class</th>
+                <th>Prefectship</th>
+            </tr>
+        </thead>
+
+        <tbody>
+            <tr>
+                <td>Daniel</td>
+                <td>20</td>
+                <td>100l</td>
+                <td>Gr.</td>
+            </tr>
+
+            <tr>
+                <td>Samuel</td>
+                <td>18</td>
+                <td>ss3</td>
+                <td>mm.</td>
+            </tr>
+            <tr>
+                <td>Celine</td>
+                <td>17</td>
+                <td>ss1</td>
+                <td>mN.</td>
+            </tr>
+            <tr>
+                <td>Grace</td>
+                <td>18</td>
+                <td>ss1</td>
+                <td>Tt.</td>
+            </tr>
+        </tbody>
+        
+    </table>
+</body>
+</html>

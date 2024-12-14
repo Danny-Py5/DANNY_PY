@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Background Slide</title>
+
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        html{
+            scroll-behavior: smooth;
+            font: 1rem Arial;
+        }
+
+        /* utility */
+        .center{
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        .animate{
+            animation: animate 1s linear;
+        }
+
+        @keyframes animate {
+            from{
+                opacity: .6;
+            }
+            to{
+                opacity: 1;
+            }
+        }
+        body{
+            margin: auto;
+            padding-bottom: 1000px;
+            max-width: 800px;
+        }
+        article{
+            background-image: radial-gradient(rgba(18, 18, 18, 0.233), rgb(0, 0, 0));
+        }
+        section{
+            background-image: url( "./img/PhotoRoom-20240501_071523.png");
+            background-repeat: no-repeat;
+            background-position: top;
+            background-size: cover;
+            width: 100%;
+            height: 100vh;
+            position: relative;
+        }
+       
+        section .div{
+            position: absolute;
+            top: 0;
+            left: 0;  
+            background-image: radial-gradient(rgba(18, 18, 18, 0.233), rgb(0, 0, 0));
+            width: 100%;
+            height: 100%;
+
+            /* z-index: -1; */
+        }
+
+
+
+        .indicator-container{
+            position: absolute;
+            right: 50px;
+            bottom: 15%;
+        }
+        .indicator{
+            width: 30px;
+            height: 30px;
+            /* background-color: transparent; */
+            border-radius: 50%;
+            border: 4px solid rgba(255, 255, 255, 0.711);
+        }
+        .indicator-2{
+            margin-top: 10px;
+            
+        }
+        .indicate{
+            background-color: rgb(205, 205, 205);
+            border-color: rgba(0, 251, 255, 0.884);
+        }
+
+        .quote-container{
+            /* position: absolute;
+            top: 10%; */
+            background: none;
+            height: 200px;
+            color: white;
+            flex-direction: column;
+        }
+        .quote-container p{
+            text-align: center;
+            margin-top: 50px;
+            color: rgba(255, 255, 255, 0.829)
+        }
+        .h1{
+            font-size: 2rem;
+            color: rgba(0, 251, 255, 0.884);
+        }
+        em{
+            text-decoration: underline;
+            text-decoration-color: rgba(0, 251, 255, 0.884);
+            display: block;
+            margin-top: 10px;
+        }
+        ::selection{
+            background-color: rgba(74, 136, 136, 0.656);
+        }
+    </style>
+</head>
+<body>
+    <article>
+        <section class="js-bg smooth-show">
+            <div class="js-bg-cover-div div center ">
+                <section class="quote-container center">
+                    <h1 class="h1">Life Real Quote</h1>
+                    <p><q> The more you wish good to yourself, the more likely you become the <strong>GOOD</strong>  </q> <em>Daniel Fatokun</em></p>
+                </section>
+            </div>
+
+            <div class="indicator-container">
+                <div class="indicator indicator-1 indicate"></div>
+                <div class="indicator indicator-2"></div>
+            </div>
+        </section>
+    </article>
+        
+    <script>
+        let backgroundImgElement = document.querySelector('.js-bg');
+
+        const backgroundImgPaths = [
+            "./img/PhotoRoom-20240501_161343.png",
+            "./img/PhotoRoom-20240501_071523.png"
+        ];
+
+        document.addEventListener('DOMContentLoaded', () => {
+            changeBackground();
+            animateBgCoverDiv();
+        });
+        
+        function changeBackground(){
+            setInterval(() => {
+                const randnum = Math.random();
+                let  index = randnum < 0.5 ? 0 : 1; 
+                let indicator;
+                backgroundImgElement.style.backgroundImage = `url(${backgroundImgPaths[index]})`;
+                
+                if (index === 1) {
+                    removeIndicator();
+                    animateBgCoverDiv();
+                    document.querySelector('.indicator-1').classList.add(['indicate']);
+
+                } else  {
+                    removeIndicator();
+                    animateBgCoverDiv();
+                    document.querySelector('.indicator-2').classList.add('indicate');
+                }
+            }, 7000);
+        }
+        let timeupid;
+        function animateBgCoverDiv(){
+            document.querySelector('.js-bg-cover-div').classList.add('animate');
+
+            if (timeupid){
+                clearTimeout(timeupid);
+            }
+            timeupid = setTimeout(() => {
+                document.querySelector('.js-bg-cover-div').classList.remove('animate');
+            }, 1000)
+        }
+        function removeIndicator(){
+            document.querySelectorAll('.indicator').forEach(indicator => {
+                indicator.classList.remove('indicate');
+            });
+        }
+    </script>
+</body>
+</html>

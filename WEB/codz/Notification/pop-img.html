@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pop img</title>
+    <style>
+        :root{
+            --top: 0;
+            --left: 0;
+        }
+        *{
+            margin: 0;
+            padding: 0;
+            box-sizing:border-box;
+        }
+        body{
+            background-color: #001310;
+        }
+        figure{
+            width: 80px;
+            height: 80px;
+            background-color: #ccc;
+            border: 2px solid #66ff00;
+            margin-top: 5px;
+            border-radius: 50%;
+            margin-left: 5px;
+            overflow: hidden;
+            position: relative;
+            /* margin-top: 50vh; */
+        }
+        .img-div-cont{
+            position: relative;
+        }
+        .img{
+            width: 100%;
+            height: 100%;
+            object-position: top;
+            object-fit: cover;
+            flex: 1;
+            border-radius: 1rem;
+        }
+        .img-div-cont.acitve{
+            position: fixed;
+            background-color: rgb(1, 33, 41);
+            width: 50vw;
+            animation: animate .5s;
+            animation-fill-mode: forwards;
+            border-radius: 1rem;
+            z-index: 2;
+        }
+
+        .img-discription{
+            background-color: rgb(1, 48, 60);
+            flex: 2;
+            display: flex;
+            padding: 8px;
+            column-gap: 1rem;
+            border-bottom-left-radius: 1rem;
+            border-bottom-right-radius: 1rem;
+            display: none;
+        }
+        .img-discription button{
+            border: none;
+            border-radius: 8px;
+            padding: 8px;
+            background-color: green;
+            color: white;
+            font-size: inherit;
+            flex: 1;
+            transition: .5s;
+        }
+        button:hover{
+            opacity: .7;
+        }
+        .img-discription button:last-child{
+            border: 2px solid green;
+            background-color: transparent;
+        }
+        @keyframes animate {
+            from{
+                left: var(--left);
+                top: var(--top);
+                scale: 0;
+
+            }
+            to{
+                top: 10%;
+                left: 50%;
+                transform: translate(-50%);
+                scale: 1;
+            }
+        }
+
+    </style>
+</head>
+<body>
+    <figure>
+        <div class="img-div-cont">
+            <img class="img" src="./PhotoRoom-20240501_071523.png" alt="">
+            <section class="img-discription" style="color: rgb(172, 172, 172)">
+                <button>Like</button>
+                <button>Follow</button>
+            </section>
+        </div>
+    </figure>
+
+    <script>
+        let figureImage = document.querySelector('.img-div-cont');
+
+        document.addEventListener('click', (e) => {
+            if (!figureImage.contains(e.target)){
+                figureImage.classList.remove('acitve');
+                enableclick();
+            };
+        });
+        figureImage.addEventListener('click', (e) => {
+
+            figureImage.querySelector('.img-discription').style.display = 'flex';
+
+            document.documentElement.style.setProperty('--top', e.clientY + 'px');
+            document.documentElement.style.setProperty('--left', e.clientX + 'px');
+            figureImage.classList.add('acitve');
+            disableclick();
+        });
+
+        function createDisableDiv() {
+            const div = document.createElement('div');
+            div.classList.add('disable');
+            Object.assign(div.style, {
+                position: 'fixed',
+                top: '0',
+                zIndex: '-1',
+            });
+            document.body.appendChild(div);
+        };
+
+        createDisableDiv();
+
+        const disableElem = document.querySelector('.disable');
+
+        function disableclick(){
+            disableElem.style.zIndex = '1';
+            disableElem.style.backgroundColor = '#88888818';
+            disableElem.style.width = '100vw';
+            disableElem.style.height = '100vh';
+        };
+
+        function enableclick(){
+            disableElem.style.zIndex = '-1';
+            disableElem.style.backgroundColor = 'transparent'
+        }
+
+    </script>
+</body>
+</html>

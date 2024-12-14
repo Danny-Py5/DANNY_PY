@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Truncate Text</title>
+    <style>
+        * {
+            padding: 0;
+            margin: 0;
+            box-sizing: border-box;
+        }
+        body{
+            background-color: #222;
+            color: whitesmoke; 
+            width: 100vw;
+            height: 100vw;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font: 1rem Arial;
+        }
+
+        h3{
+            color: rgb(198, 128, 0);
+        }
+
+        .box{
+            height: 80px;
+            width: 95vw;
+            padding: 1rem;
+            border: 2px solid lightblue;
+            background-color: rgb(0, 43, 41);
+            /* resize: both;
+            overflow: auto; */
+            display: flex;
+            column-gap: .7rem;
+        }
+        .box p{
+            display: -webkit-box;
+            -webkit-line-clamp: 1;
+            -webkit-box-orient: vertical;
+            /* overflow: hidden must be there to hide the other text */
+            overflow: hidden;
+            font-size: 12px;
+        }
+        .user{
+            min-width: 50px;
+            min-height: 50px;
+            background-color: rgb(0, 169, 152);
+            border-radius: 50%;
+            position: static;
+            left: 0;
+        }
+        .user + section {
+            /* background-color: red; */
+            display: flex;
+            flex-direction: column;
+            height: 100%;
+            width: 100%;
+            justify-content: center;
+        }
+    </style>
+</head>
+<body>
+    <section class="box">
+        <section class="user">
+
+        </section>
+        <section>
+            <h3>Daniel Olatunde</h3>
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Blanditiis accusamus illum inventore omnis error, optio deserunt dolor vitae deleniti aliquam asperiores magnam excepturi voluptatem, quasi voluptatibus earum ea sed eos.</p>
+        </section>
+    </section>
+</body>
+</html>

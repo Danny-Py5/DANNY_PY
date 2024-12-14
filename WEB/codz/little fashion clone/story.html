@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tooplate's Little Fashion - About Page</title>
+
+    <link rel="stylesheet" href="styles/websites/general.css">
+    <link rel="stylesheet" href="styles/websites/header.css">
+    <link rel="stylesheet" href="styles/websites/utility.css">
+
+    <link rel="stylesheet" href="styles/footer.css">
+
+    <link rel="stylesheet" href="styles/websites/story.css">
+</head>
+<body>
+    <header class="header" id="js-header">
+        <button class="header__button js-header__button">
+            <div class="header__menu-icon js-header__menu-icon"></div>
+        </button>
+        <h2 class="header__logo"><a href="#"><span>Little </span>Fashion</h2></a>
+
+        <nav class="header__nav js-header__nav">
+            <ul>
+                <li class="js-li"><a class="header-link" href="index.html">Home</a></li>
+                <li class="js-li"><a class="header-link inview"  href="#">Story</a></li>
+                <li class="js-li"><a class="header-link"  href="product.html">Products</a></li>
+                <li class="js-li"><a class="header-link"  href="#">FAQs</a></li>
+                <li class="js-li"><a class="header-link"  href="#">Contact</a></li>
+            </ul>
+        </nav>
+        <section class="header__right">
+            <ul>
+                <li><a class="white-space-nowrap" href="sign-in.html">Sign In</a></li>
+                <li><a href="sign-in.html">Shop</a></li>
+            </ul>
+        </section>
+    </header>
+
+    <section class="hero">
+        <div class="hero__h1-cont">
+            <h1><span>Company</span> <br> Fashion</h1>
+        </div>
+        <div>
+            <figure>
+                <img src="images/header/businesspeople-meeting-office-working.jpg" alt="">
+            </figure>
+        </div>
+    </section>
+
+    <section class="team">
+        <div>
+            <h2>Meet our <span>team</span></h2>
+        </div>
+        <section class="container">
+            <div class="card">
+                <figure>
+                    <img src="images/people/senior-man-wearing-white-face-mask-covid-19-campaign-with-design-space.jpeg" alt="">
+                </figure>
+
+                <div>
+                    <h3>Don</h3>
+                    <p>Product, VP</p>
+                </div>
+                <div class="add">
+                    <button>+</button>
+                </div>
+            </div>
+            <div class="card">
+                <figure>
+                    <img src="images/people/portrait-british-woman.jpeg" alt="">
+                </figure>
+
+                <div>
+                    <h3>Kelly</h3>
+                    <p>Marketing</p>
+                </div>
+                <div class="add">
+                    <button>+</button>
+                </div>
+            </div>
+            <div class="card">
+                <figure>
+                    <img src="images/people/beautiful-woman-face-portrait-brown-background.jpeg" alt="">
+                </figure>
+
+                <div>
+                    <h3>Don</h3>
+                    <p>Founder</p>
+                </div>
+                <div class="add">
+                    <button>+</button>
+                </div>
+            </div>
+        </section>
+    </section>
+
+    <section class="testimonia-cont">
+        <h2 class="nowrap">Customer love,<br> <span class="nowrap"><span>Little</span> Fashion</span></h2>
+    
+        <div class="testimonia-wrapper">
+            <div class="testimonia-card-scroll-bar">
+                <div class="testimonia-card" draggable="true">
+                    <div class="quote">
+                    </div>
+                    <div>
+                        <p class="text">Over three years in business, We’ve had the chance to work on a variety of projects, with companies Lorem ipsum dolor sit amet</p>
+                        <div class="customer">
+                            <img src="images/people/senior-man-wearing-white-face-mask-covid-19-campaign-with-design-space.jpeg" alt="">
+                            <p><span class="name">George,</span> <span class="role">Digital Art Fashion</span></p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="testimonia-card" draggable="true">
+                    <div class="quote">
+
+                    </div>
+                    <div>
+                        <p class="text">Over three years in business, We’ve had the chance to work on a variety of projects, with companies Lorem ipsum dolor sit amet</p>
+                        <div class="customer">
+                            <img src="images/people/senior-man-wearing-white-face-mask-covid-19-campaign-with-design-space.jpeg" alt="">
+                            <p><span class="name">George,</span> <span class="role">Digital Art Fashion</span></p>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="testimonia-card" draggable="true">
+                    <div class="quote">
+
+                    </div>
+                    <div>
+                        <p class="text">Over three years in business, We’ve had the chance to work on a variety of projects, with companies Lorem ipsum dolor sit amet</p>
+                        <div class="customer">
+                            <img src="images/people/senior-man-wearing-white-face-mask-covid-19-campaign-with-design-space.jpeg" alt="">
+                            <p><span class="name">George,</span> <span class="role">Digital Art Fashion</span></p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="testimonia-card" draggable="true">
+                    <div class="quote">
+
+                    </div>
+                    <div>
+                        <p class="text">Over three years in business, We’ve had the chance to work on a variety of projects, with companies Lorem ipsum dolor sit amet</p>
+                        <div class="customer">
+                            <img src="images/people/senior-man-wearing-white-face-mask-covid-19-campaign-with-design-space.jpeg" alt="">
+                            <p><span class="name">George,</span> <span class="role">Digital Art Fashion</span></p>
+                        </div>
+                    </div>
+                </div>
+
+
+            </div>
+        </div>
+    </section>
+
+    <footer class="js-footer"></footer>
+
+    <script type="module" src="scripts/header.js"></script>
+    <script src="scripts/loadfooter.js"></script>
+
+    <script>
+        const cardCont = document.querySelector('.testimonia-card-scroll-bar');
+        let isDragging = false;
+
+        function moveCard(e) {
+            console.log('mose overing...');
+            if (isDragging){
+                cardCont.scrollLeft = e.clientX;
+            }
+        }
+
+        function dragStart(e){
+            isDragging = true;
+            cardCont.style.cursor = 'grab'
+        }
+        function dragEnd(e) {
+            console.log(e);
+            cardCont.scrollLeft = e.clientX;
+            isDragging = false;
+        }
+        
+        cardCont.addEventListener('mousedown', dragStart)
+        cardCont.addEventListener('mouseup', dragEnd)
+        cardCont.addEventListener('drag', moveCard)
+        </script>
+</body>
+</html>

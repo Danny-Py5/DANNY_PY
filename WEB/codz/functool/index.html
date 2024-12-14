@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DannyPy Function tool Test web</title>
+</head>
+<body>
+    <button style="padding: 1rem" >Enable</button>
+    <button class="js-disable" style="padding: 1rem">Disable</button>
+
+    <script type="module">
+
+        import { overlay } from "./function.js";
+
+        document.querySelector('button').addEventListener('click', () => {
+            overlay.enableOverlay();
+        });
+
+        document.querySelector(".js-disable").addEventListener('click', () => {
+            overlay.disableOverlay();
+        })
+    </script>
+</body>
+</html>

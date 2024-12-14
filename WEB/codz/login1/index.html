@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login</title>
+    <link rel="stylesheet" href="styles/styles.css">
+</head> 
+<body>
+    <article class="container">
+        <section class="login">
+            <h2 class="login__h2">Login</h2>
+
+            <label for="name">Name</label>
+            <input type="text" placeholder="Name" id="name" name="name" class="name" required>
+    
+            <label for="passward">Passward</label>
+            <input type="password" placeholder="Passward" id="passward" name="passward" class="passward"  required>
+
+            <button class="submit">Submit</button>
+        </section>
+
+        <section class="sign-in hide-sign-in">
+            <h2 class="sign-in__h2">Sign-in</h2>
+
+            <label for="signin-name">Name</label>
+            <input type="text" placeholder="Name" id="signin-name" name="signin-name" class="signin-name" required>
+
+            <label for="email">Email</label>
+            <input type="email" placeholder="email" id="email" name="email" class="email" required>
+
+            <label for="phone">Phone</label>
+            <input type="tel" placeholder="phone" id="phone" name="phone" class="phone" required>
+
+            <label for="passward2">Passward</label>
+            <input type="password" placeholder="Passward" id="passward2" name="passward2" class="passward2"  required>
+
+            <button class="sign-in-button">Sign in</button>
+        </section>
+    </article>
+    
+
+    <script>
+        let signInElem = document.querySelector('.sign-in');
+        signH2Elem = document.querySelector('.sign-in__h2');
+        let loginH2Elem = document.querySelector('.login__h2');
+
+        document.querySelector('.sign-in__h2').addEventListener('click', () => {
+            signInElem.classList.remove('hide-sign-in')
+            signInElem.classList.add('show-sign-in');
+            loginH2Elem.classList.add('login__h2--small');
+            signH2Elem.classList.add('sign-in__h2--large');
+
+            document.querySelector('.container').classList.add('container--add-buttom-radius')
+        })
+
+        document.querySelector('.login__h2').addEventListener('click', () => {
+            signInElem.classList.remove('show-sign-in');
+            signInElem.classList.add('hide-sign-in');
+            loginH2Elem.classList.remove('login__h2--small');
+            signH2Elem.classList.remove('sign-in__h2--large');
+
+            document.querySelector('.container').classList.remove('container--add-buttom-radius')
+        });
+    </script>
+</body>
+</html>

@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Delete Animation</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <section class="del-cont">
+        <button class="delete-btn"> 
+            <div class="del-obj"></div>
+            <div class="delete-btn__cover"></div>
+             <div class="delete-btn__open-bin"></div> 
+        </button>
+        <p class="deleted-msg-pop-up"></p>
+    </section>
+
+    <script>
+        let timeOut;
+        let deleteBtnElem = document.querySelector('.delete-btn');
+        deletebin = {
+            deletButtonCoverElem: document.querySelector('.delete-btn__cover'),
+            deleteObject: document.querySelector('.del-obj'), 
+            deleteMSG: document.querySelector('.deleted-msg-pop-up')
+        };
+        function detele(){
+            deleteBtnElem.addEventListener('click', () => {
+                // clear previous timeOut;
+                if (timeOut){
+                    clearTimeout(timeOut);
+                };
+                deletebin.deletButtonCoverElem.classList.add('openBin');
+                deletebin.deleteObject.classList.add('dropDelObj');
+                deletebin.deleteMSG.innerText = 'Deleted'
+                
+                // asychronous code that will be executed to remove the animations applied to the delete button class lists after 1000ms
+                timeOut = setTimeout(() => {
+                    deletebin.deletButtonCoverElem.classList.remove('openBin');
+                    deletebin.deleteObject.classList.remove('dropDelObj');
+                    deletebin.deleteMSG.innerText = '';
+                }, 1000);
+            });
+        };
+        detele();
+    </script>
+</body>
+</html>

@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+
+    <style>
+        h2,p{
+            animation: smoothScroll linear both;
+            animation-timeline: view(y);
+        }
+
+        @keyframes smoothScroll {
+            from{
+                opacity: 0;
+                transform: translateY(100px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        section{
+            width: 100px;
+            height: 100px;
+            background-color: green;
+            border: 2px solid white;
+            animation: moveF 2s linear;
+            animation-fill-mode: both;
+        }
+        @keyframes moveF {
+            from{
+                transform: translate(0);
+            }
+            to {
+                
+                transform: translateX(150px) ;
+            }
+        }
+        * {
+            background-color: black;
+            color: white;
+        }
+    </style>
+</head>
+<body>
+    <main>
+        <article>
+            <h2>Article 1</h2>
+            <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Voluptas vero explicabo aliquam quas, possimus, deserunt, accusamus et quasi ex ad nemo. Deleniti aut sapiente fugiat esse necessitatibus sint dolores quidem!</p>
+            <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Porro animi, incidunt deleniti voluptates, adipisci rerum quibusdam dolorum minus tenetur exercitationem fugit error. Dicta sequi illum ex explicabo deserunt beatae unde.</p>
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Consequatur expedita magni cum itaque voluptatibus quidem placeat ratione odit hic animi harum, fuga iste eaque quam modi facere, omnis perspiciatis cumque?</p>
+        </article>
+
+        <article>
+            <h2>Article 2</h2>
+            <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Voluptas vero explicabo aliquam quas, possimus, deserunt, accusamus et quasi ex ad nemo. Deleniti aut sapiente fugiat esse necessitatibus sint dolores quidem!</p>
+            <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Porro animi, incidunt deleniti voluptates, adipisci rerum quibusdam dolorum minus tenetur exercitationem fugit error. Dicta sequi illum ex explicabo deserunt beatae unde.</p>
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Consequatur expedita magni cum itaque voluptatibus quidem placeat ratione odit hic animi harum, fuga iste eaque quam modi facere, omnis perspiciatis cumque?</p>
+        </article>
+
+        <article>
+            <h2>Article 3</h2>
+            <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Voluptas vero explicabo aliquam quas, possimus, deserunt, accusamus et quasi ex ad nemo. Deleniti aut sapiente fugiat esse necessitatibus sint dolores quidem!</p>
+            <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Porro animi, incidunt deleniti voluptates, adipisci rerum quibusdam dolorum minus tenetur exercitationem fugit error. Dicta sequi illum ex explicabo deserunt beatae unde.</p>
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Consequatur expedita magni cum itaque voluptatibus quidem placeat ratione odit hic animi harum, fuga iste eaque quam modi facere, omnis perspiciatis cumque?</p>
+        </article>
+
+        <article>
+            <h2>Article 4</h2>
+            <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Voluptas vero explicabo aliquam quas, possimus, deserunt, accusamus et quasi ex ad nemo. Deleniti aut sapiente fugiat esse necessitatibus sint dolores quidem!</p>
+            <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Porro animi, incidunt deleniti voluptates, adipisci rerum quibusdam dolorum minus tenetur exercitationem fugit error. Dicta sequi illum ex explicabo deserunt beatae unde.</p>
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Consequatur expedita magni cum itaque voluptatibus quidem placeat ratione odit hic animi harum, fuga iste eaque quam modi facere, omnis perspiciatis cumque?</p>
+        </article>
+
+        <section></section>
+    </main>
+</body>
+</html>

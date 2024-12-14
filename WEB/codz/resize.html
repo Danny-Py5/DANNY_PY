@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>resize object</title>
+    <style>
+        * {
+            padding: 0;
+            margin: 0;
+            box-sizing: border-box;
+        }
+        body{
+            background-color: #222;
+            color: whitesmoke; 
+            width: 100vw;
+            height: 100vw;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .resize-object{
+            width: 300px;
+            padding: 1rem;
+            border: 2px solid lightblue;
+            overflow: auto;
+            resize: both;
+            /* border-radius: 50%; */
+        }
+    </style>
+</head>
+<body>
+    <section class="resize-object">                     
+        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Blanditiis accusamus illum inventore omnis error, optio deserunt dolor vitae deleniti aliquam asperiores magnam excepturi voluptatem, quasi voluptatibus earum ea sed eos.</p>
+    </section>
+</body>
+</html>

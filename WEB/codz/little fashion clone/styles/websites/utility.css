@@ -1,0 +1,32 @@
+/* utility classes */
+.addfadeBg-animation{
+    animation: addfadeBg .5s linear;
+}
+
+.f-color-secondary{
+    color: var(--grey-color);
+}
+/* custome link without <a> tag */
+.primary-link{
+    cursor: pointer;
+    color: var(--primary-link-color);
+    transition: var(--hover-transition-timing);
+}
+/* link with <a> tag */
+.link-secondary{
+    font-size: var(--link-secondary-fs);
+    font-weight: bold;
+}
+
+.primary-link:hover{
+    color: var(--span-color);
+}
+.z-index-2{
+    z-index: 2;
+}
+.active {
+    border-left-color: var(--span-color);
+    color: var(--span-color);
+}
+
+/* utility classes  ends*/

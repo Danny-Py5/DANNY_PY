@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Input valid</title>
+    <style>
+        body{
+            font: 1rem arial;
+            color: white;
+            background-color: #000b11;
+        }
+        input[name]{
+            border: 2px solid grey;
+            border-radius: 10px;
+            padding: 10px 5px;
+            font: inherit;
+            background-color: transparent;
+            color: inherit;
+        }
+        input[name]:where(:valid){
+            border-color: rgb(118, 193, 6);
+        }
+        input[name]:where(:focus:invalid){
+            border-color: rgb(241, 44, 0);
+        }
+        input[name]:focus{
+            /* border-color: rgb(255, 85, 47); */
+            outline: none;
+        }
+
+        fieldset{
+            width: 70%;
+            border: 3px solid green;
+            display: flex;
+            flex-direction: column;
+            /* align-items: flex-start; */
+        }
+        input[type='submit']{
+            padding: 10px;
+            border: none;
+            border-radius: 1rem;
+            transition: .5s;
+        }
+        input[type='submit']:hover{
+            background-color: rgb(193, 223, 198);
+        }
+    </style>
+</head>
+<body>
+    <form action="">
+        <fieldset>
+            <legend>User Details</legend>
+            <label for="name">Name:</label>
+            <input type="text" placeholder="Your name" id="name" name="name" required><br><br>
+
+            <label for="Phone">Phone:</label>
+            <input type="tel" id="Phone" name="Phone" required placeholder="Phone Number
+            "><br>
+            <input id="submit" type="submit" value="Render">
+        </fieldset>
+    </form>
+
+    <script>
+        // document.write()
+
+        let render = document.getElementById('submit');
+
+        render.addEventListener('click', (e) => {
+            console.log(e.data)
+        })
+    </script>
+</body>
+</html>

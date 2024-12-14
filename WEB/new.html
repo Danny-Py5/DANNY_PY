@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>hero</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        mark{
+            background-color: greenyellow;
+            border-radius: 8px;
+            padding: 2px;
+        }
+        html{
+            font-family: Helvetica;
+            scroll-behavior: smooth;
+            color: whitesmoke;
+            background-color: black;
+        }
+        body{
+            padding-bottom: 7rem;
+        }
+        .hero{
+            /* background-color: #bbbaba; */
+            width: 100vw;
+            position: relative;
+            height: 100vh;
+        }
+        figure{
+            width: 100%;
+            height: 100%;;
+        }
+        img{
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+        
+        .content{
+            display: none;
+            /* transition: 1s; */
+        }
+        .content button{
+            padding: 5px 1rem;
+            margin-top: 1rem;
+            background-color: green;
+            border: 2px solid white;
+            border-radius: 8px;
+            color: inherit;
+        }
+        .content.hover{
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            position: absolute;
+            top: 0;
+            left: 0;
+            background-color: rgba(0, 0, 0, 0.668);
+            width: 100%;
+            height: 100%;
+            z-index: 1;
+            color: white;
+        }
+        .slideUp{
+            animation: slideUp ease-out .3s 1;
+        }
+        @keyframes slideUp {
+           from{
+            transform: translateY(20px);
+           } 
+           to{
+            transform: translateY(0);
+           }
+        }
+        form{
+            height: 100vh;
+            /* scroll-margin-top: .5rem; */
+            background-color: rgb(31, 26, 26);
+            display: flex;
+            flex-direction: column;
+            text-align: center;
+            align-items: center;
+            padding-top: 30px;
+        }
+        input{
+            border: 2px solid rgb(74, 73, 73);
+            width: 400px;
+            padding: .5em;
+            margin-bottom: .5em;
+            background-color: rgb(46, 46, 46);
+            color: inherit;
+            border-radius: 8px;
+        }
+        input:active, input:focus{
+            outline: 2px solid yellowgreen;
+
+        }
+        input:first-of-type{
+            margin-top: 30px;
+        }
+    </style>
+</head>
+<body>
+    <section class="hero">
+        <figure>
+            <img src="/WEB/codz/little fashion clone/images/slideshow/team-meeting-renewable-energy-project.jpeg" alt="" width="400" height="auto">
+        </figure>
+        <div class="content">
+            <h1 class="slideUp">Say Hello to the <mark>Tech world!</mark></h1>
+            <button onclick="location.href='#form'" class="slideUp">Explore</button>
+        </div>
+    </section>
+
+    <form action=""  id="form">
+        <h1>Welcome Back</h1>
+        <p><mark>Login</mark></p>
+        <input type="text" placeholder="Enter your name">
+        <input type="password" name="password" id="password" placeholder="Enter your password">
+        <input type="submit" name="submit" id="submit" > 
+    </form>
+
+    <script>
+        const hero = document.querySelector('.hero');
+        const content = document.querySelector('.content');
+        hero.addEventListener('mouseover', () => {
+            content.classList.add('hover')
+        })
+        hero.addEventListener('mouseout', () => {
+            content.classList.remove('hover')
+        })
+    </script>
+</body>
+</html>

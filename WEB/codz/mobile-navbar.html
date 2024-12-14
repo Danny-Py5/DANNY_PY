@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <style>
+        * {
+            box-sizing: border-box;
+            padding: 0;
+            margin: 0;
+        }
+        body{
+            font: 1rem Arial ;
+            padding-bottom: 1000px;
+        }
+        header{
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+
+            background-color: rgb(0, 0, 0);
+            color: white;
+            padding: 1rem;
+            position: relative;
+            /* overflow: auto; */
+        }
+        nav{
+            flex-basis: 60%;
+        }
+        ul{
+            display: flex;
+            place-content: center space-between;
+            list-style-type: none;
+            display: flex;
+        }
+        a:any-link{
+            color: white;
+            text-decoration: none;
+        }
+        .display-block{
+            top: 50px;
+        }
+        .header__button{
+            width: 35px;
+            height: 30px;
+            background-color: transparent;
+            position: relative;
+            border: none;
+            display: none;
+            cursor: pointer;
+        }
+        .header__button::before,
+        .header__button::after{
+            content: '';
+        }
+        .header__button::before, 
+        .header__menu-icon, 
+        .header__button::after{
+            position: absolute;
+            width: 35px;
+            height: 3px;
+            background-color: rgba(255, 255, 255, 0.829);
+            left: 0;
+            border: none;
+            border-radius: 30px;
+            transition: .5s;
+        }
+        .header__button::before{
+            transform: translateY(-10px);
+        }
+        .header__button::after{
+            transform: translateY(10px);
+        }
+
+        .active.header__button::before{
+            transform: rotate(45deg);
+        }
+        .active.header__menu-icon{
+            background-color: transparent;
+        }
+        .active.header__button::after{
+            transform: rotate(-45deg) ;
+        }
+
+        @media screen and (max-width: 700px) {
+            header nav{
+                position: absolute;
+                top: -509px;
+                width: 50%;
+                right: 0;
+                background-color: black;
+                transition: .5s linear;
+            }
+            .header__button{
+                display: block;
+            }
+            header nav ul{
+                flex-direction: column;
+                align-items: flex-end;
+                row-gap: 30px;
+                margin-top: 80px;
+                padding-right: 1rem;
+                padding-bottom: 20px
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>websites</h1>
+        <nav class="js-header__nav">
+            <ul>
+                <li><a class="js-li-a" href="#">Home</a></li>
+                <li><a class="js-li-a" href="#">Store</a></li>
+                <li><a class="js-li-a" href="#">Products</a></li>
+                <li><a class="js-li-a" href="#">Blog</a></li>
+                <li> <a class="js-li-a" href="#">Contact</a></li>
+            </ul>
+        </nav>
+        <button class="header__button js-header__button">
+            <div class="header__menu-icon js-header__menu-icon"></div>
+        </button>
+    </header>
+
+    <script>
+
+        let flag = 0;
+        const headerButton = document.querySelector('.js-header__button');
+        const menuIcon = document.querySelector('.header__menu-icon');
+        const headerNav =  document.querySelector('.js-header__nav');
+        
+        
+        const headerButtonHandler = {
+            // when the button is clicked
+            buttonClicked: headerButton.addEventListener('click', () => {
+                flag++;
+                if (flag === 2){
+
+                    [headerButton, menuIcon].forEach(elem => {
+                        elem.classList.remove("active");
+                    });
+                    headerNav.classList.remove('active')
+                    headerNav.classList.remove('display-block');
+                    flag = 0;
+                } else {
+                    [headerButton, menuIcon].forEach(button  => {
+                        button.classList.add('active')
+                    });
+                    headerNav.classList.add('display-block');
+                };
+            }),
+
+            // add event listener to all the li(s) to display the nav bar none when clicked
+            linkClicked: document.querySelectorAll('.js-li-a').forEach(li => {
+                li.addEventListener('click', () => {
+                    headerNav.classList.remove('active');
+                    headerNav.classList.remove('display-block');
+                    [headerButton, menuIcon].forEach(aaas => {
+                        aaas.classList.remove('active')
+                    })
+                    flag = 0;
+                });
+            })
+        }
+    </script>
+</body>
+</html>

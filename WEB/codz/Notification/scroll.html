@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Scroll Animation</title>
+    <style>
+        .scroll-bar{
+            position: fixed;
+            top: 0;
+            width: 50px;
+            height: 4px;
+            background-color: red;
+            animation: Scrollanimation 1s linear;
+            animation-timeline: scroll();
+            transform-origin: left;
+        }
+        @keyframes Scrollanimation {
+            from{
+                width: 0;
+                scale: 0;
+            }
+            to{
+                scale: 1;
+                width: 100%
+            }
+
+        }
+    </style>
+</head>
+<body>
+    <div class="scroll-bar"></div>
+    <article>
+        <h2>Article 1</h2>
+        <p>
+            Lorem ipsum dolor, sit amet consectetur adipisicing elit. Modi excepturi ipsam dicta fugit harum nulla ea, quidem voluptatem quia veritatis praesentium ullam minima ab cumque possimus alias aut aspernatur quibusdam! Lorem, ipsum dolor sit amet consectetur adipisicing elit. Corporis labore ipsam eaque officia ducimus earum delectus soluta ipsa laborum atque, harum minima culpa minus. Officiis exercitationem asperiores natus sequi nihil!
+        </p>
+        <p>
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Aliquam sit eius amet minus quo esse inventore corporis suscipit voluptates, animi explicabo temporibus, porro accusantium! Consequuntur amet aliquam rem nesciunt facere?
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Eum ipsum error officiis eveniet molestias assumenda totam obcaecati corporis. Voluptas placeat officiis alias tenetur. Iure nemo quam ad cumque at? Repellendus!
+        </p>
+    </article>
+
+    <article>
+        <h2>Article 2</h2>
+        <p>
+            Lorem ipsum dolor, sit amet consectetur adipisicing elit. Modi excepturi ipsam dicta fugit harum nulla ea, quidem voluptatem quia veritatis praesentium ullam minima ab cumque possimus alias aut aspernatur quibusdam! Lorem, ipsum dolor sit amet consectetur adipisicing elit. Corporis labore ipsam eaque officia ducimus earum delectus soluta ipsa laborum atque, harum minima culpa minus. Officiis exercitationem asperiores natus sequi nihil!
+        </p>
+        <p>
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Aliquam sit eius amet minus quo esse inventore corporis suscipit voluptates, animi explicabo temporibus, porro accusantium! Consequuntur amet aliquam rem nesciunt facere?
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Eum ipsum error officiis eveniet molestias assumenda totam obcaecati corporis. Voluptas placeat officiis alias tenetur. Iure nemo quam ad cumque at? Repellendus!
+        </p>
+    </article>
+
+    <article>
+        <h2>Article 3</h2>
+        <p>
+            Lorem ipsum dolor, sit amet consectetur adipisicing elit. Modi excepturi ipsam dicta fugit harum nulla ea, quidem voluptatem quia veritatis praesentium ullam minima ab cumque possimus alias aut aspernatur quibusdam! Lorem, ipsum dolor sit amet consectetur adipisicing elit. Corporis labore ipsam eaque officia ducimus earum delectus soluta ipsa laborum atque, harum minima culpa minus. Officiis exercitationem asperiores natus sequi nihil!
+        </p>
+        <p>
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Aliquam sit eius amet minus quo esse inventore corporis suscipit voluptates, animi explicabo temporibus, porro accusantium! Consequuntur amet aliquam rem nesciunt facere?
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Eum ipsum error officiis eveniet molestias assumenda totam obcaecati corporis. Voluptas placeat officiis alias tenetur. Iure nemo quam ad cumque at? Repellendus!
+        </p>
+    </article>
+</body>
+</html>

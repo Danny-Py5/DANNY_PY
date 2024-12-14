@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Drag Object</title>
+    <style>
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+        body{
+            font: 1rem Arial;
+            background-color: rgb(18, 18, 18);
+            color: white;
+            padding-bottom: 1000px;
+            position: relative;
+        }
+        .box{
+            background-color: rebeccapurple;
+            width: 100px;
+            height: 100px;
+            left: 200px;
+            border-radius: 1rem;
+            border: 2px solid white;
+            position: absolute;
+            cursor: move;
+            /* transition: .3s linear; */
+        }
+    </style>
+</head>
+<body>
+    
+    <section>
+        <div class="box"></div>
+    </section>
+
+    <script>
+        var log = console.log
+        let offsetX, offsetY;
+
+        let box = document.querySelector('.box');
+
+        box.addEventListener('mousedown', event => {
+            offsetX = event.clientX - box.offsetLeft;
+            offsetY = event.clientY - box.offsetTop;
+            
+            box.style.cursor = 'grabbing';
+            document.addEventListener('mousemove', move);
+            document.addEventListener('mouseup', stopMove);
+        });
+        function move(event){
+            box.style.left = `${event.clientX - offsetX}px`;
+            box.style.top =`${event.clientY - offsetY}px`;
+            box.style.cursor = 'grab';
+            // console.log(box.offsetLeft)
+            // log(event)
+        }
+        function stopMove() {
+            document.removeEventListener('mousemove', move);
+            box.style.cursor = 'move';
+        }
+
+    </script>
+</body>
+</html>

@@ -1,0 +1,132 @@
+*{
+    margin: 0;
+    box-sizing: border-box;
+    padding: 0;
+}
+
+:root{
+    --primary-color: green;
+    --color: #555;
+    --padding: .5rem;
+}
+body{
+    /* padding: .3rem; */
+    font-size: 1rem;
+    background-color: whitesmoke;
+    font-family: Arial, Helvetica, sans-serif;
+}
+section{
+    padding: var(--padding)
+}
+.profile-cont{
+    /* border-bottom: 1px solid var(--color); */
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.105);
+}
+.profile-img-cont{
+    width: 50px;
+    height: 50px;    
+    background-color: var(--color);
+
+    border-radius: 50px;
+    outline: 2px solid var(--primary-color);
+    outline-offset: 1px;
+}
+
+.chat-cont{
+    /* background-color: antiquewhite; */
+    height: 90vh;
+    display: flex;
+    flex-direction: column;
+    position: relative;
+    gap: 8px;
+}
+
+.chat-wrapper{
+    overflow-y: scroll;
+    display: flex;
+    flex-direction: column;
+    flex: 2;
+    /* border-bottom: 19px solid red; */
+    /* background-color: blue; */
+    /* justify-content: flex-end; */
+}
+.chats{
+    display: flex;
+    /* background-color: red; */
+    flex-direction: column;
+    width: 100%;
+}
+
+
+.sent-message-body{
+    background-color: var(--primary-color);
+    align-self: flex-end;
+}
+
+.received-message-body{
+    background-color: rgb(2, 49, 2);
+    align-self: flex-start;
+}
+
+.sent-message-body, 
+.received-message-body{
+    max-width: 80%;
+    color: white;
+    padding: .5rem;
+    border-radius: .5rem;
+}
+
+
+/* actions container */
+.chat-cont div:last-child{
+    /* background-color: green; */
+    display: flex;
+    gap: 8px;
+    padding: var(--padding);
+
+}
+#message{
+    flex: 1;
+    border-radius: .5rem;
+    background-color: #ececec;
+    border: none;
+    font: inherit;
+    padding: .3rem;
+    color: grey;
+    resize: none;
+}
+#message:active{
+    border: 2px solid orange;
+}
+#message::placeholder{
+    padding-top: 20px;
+    padding-left: 1rem;
+}
+.send{
+    border-radius: .5rem;
+    padding: 0 1rem;
+    border: none;
+    background-color: var(--primary-color);
+    color: white;
+    font: inherit;
+}
+
+.user{
+    position: absolute;
+    right: 0;
+}
+.user-other{
+    position: absolute;
+    left: 0;
+}
+.dd{
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    height: 1000px;
+}
+.box{
+
+    background-color: red;
+    /* height: 100px; */
+}

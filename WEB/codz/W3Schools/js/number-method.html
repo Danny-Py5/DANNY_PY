@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>number methods</title>
+</head>
+<body>
+    <script>
+
+        const person = {
+            firstName: "John",
+            lastName: "Doe",
+            id: 5566,
+            fullName: function() {
+                return this.firstName + " " + this.lastName;
+            }
+        };
+        person.name = function () {
+            return this.firstName + " " + this.lastName;
+        };
+
+        console.log(person.name())
+
+        // collect all the value of each property of the person object
+        const myArray = Object.values(person);
+        console.log('asdfsda', Object.getOwnPropertyNames(person));
+
+        // Display the Array
+        console.log(myArray);
+
+        //  get both the property and value (using enumerate in python)
+        console.log(Object.entries(person)); // returns array
+
+        // in for ... loop
+
+        for (let [property, value] of Object.entries(person)){
+            console.log(property, ':', value)
+        }
+
+        // object constructor
+
+        function Person(first, last, age, eyecolor) {
+            this.firstName = first;
+            this.lastName = last;
+            this.age = age;
+            this.eyeColor = eyecolor;
+            this.nationality = "English";
+        }
+
+        const newPerson = new Person('Daniel', 'olatunde', 20, 'white');
+
+        Person.prototype.aaaaa = 'helllllllll'
+
+        console.log(newPerson.aaaaa);
+
+        const nn = new Person('sad', 'adsf', 33, 'qwer');
+
+        console.log(nn.aaaaa);
+
+        const arr = [1, 2, 5, 6, 7];
+
+        for (let a of Object.entries(arr)){
+            console.log(a[0], a[1]);
+        };
+
+
+
+        //  Bigint()
+        console.clear();
+        const myBigInt = BigInt(false);
+        const num1 = BigInt(234242342342423423423423423423);
+        const num2 = 234242342342423423423423423423;
+        console.log(num1, num2, Number.MAX_SAFE_INTEGER);
+
+        console.log(Number.isSafeInteger(num2))
+
+        console.log((333.5).toPrecision(5));
+        console.log( (333.5).toFixed(5))
+
+        const list = [];for(let i=1; i <= 10; i++){list.push(i)};
+        console.log(list.includes(5))
+        console.log(list.filter((value, index) => {
+            if (value === 3) {
+                return;
+            }
+            return value
+        }));
+
+        const myStr = 'I love Oluwakemisola :)';
+        console.log(myStr.charAt(9));
+        console.log(myStr.at(-1))
+        console.log(myStr.substring(0, 7));
+
+        
+    </script>
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

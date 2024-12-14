@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tooplate's Little Fashion - Product Detail</title>
+
+    <link rel="stylesheet" href="styles/websites/general.css">
+    <link rel="stylesheet" href="styles/websites/header.css">
+    <link rel="stylesheet" href="styles/websites/utility.css">
+
+    <link rel="stylesheet" href="styles/websites/product-details.css">
+
+    <link rel="stylesheet" href="styles/footer.css">
+</head>
+<body>
+    <header class="header" id="js-header">
+        <button class="header__button js-header__button">
+            <div class="header__menu-icon js-header__menu-icon"></div>
+        </button>
+        <h2 class="header__logo"><a href="#"><span>Little </span>Fashion</h2></a>
+
+        <nav class="header__nav js-header__nav">
+            <ul>
+                <li class="js-li"><a class="header-link" href="index.html">Home</a></li>
+                <li class="js-li"><a class="header-link"  href="story.html">Story</a></li>
+                <li class="js-li"><a class="header-link"  href="product.html">Products</a></li>
+                <li class="js-li"><a class="header-link"  href="#">FAQs</a></li>
+                <li class="js-li"><a class="header-link"  href="#">Contact</a></li>
+            </ul>
+        </nav>
+        <section class="header__right">
+            <ul>
+                <li><a class="white-space-nowrap" href="sign-in.html">Sign In</a></li>
+                <li><a href="sign-in.html">Shop</a></li>
+            </ul>
+        </section>
+    </header>
+    
+    <h1 class="intro-info"><span>We provide you</span> Fashionable Stuffs</h1>
+    
+    <main>
+        <section class="product-thumb" style="padding-bottom: 7rem">
+            <figure>
+                <img src="images/product/evan-mcdougall-qnh1odlqOmk-unsplash.jpeg" class="img-fluid product-image" alt="product image">
+            </figure>
+
+            <article class="product-thumb__description">
+                <div>
+                    <h2>Tree Pot</h2>
+                    <p>Original package design from house</p>
+                    <p>$25</p>
+                </div>
+
+                <div>
+                    <h3>Description</h3>
+                    <p>Over three years in business, We’ve had the chance to work on a variety of projects, with companies</p>
+                </div>
+                <div>
+                    <select name="quantity" id="product-quantity" class="product-quantity-select">
+                        <option value="">Quantity</option>
+                        <option value="1">1</option>
+                        <option value="2">2</option>
+                        <option value="3">3</option>
+                        <option value="4">4</option>
+                        <option value="5">5</option>
+                    </select>
+
+                    <input type="button" name="add-to-cart" id="add-to-cart" value="ADD TO CART">
+                </div>
+                <div>
+                    <a href="#">Details</a>
+                    <a href="#">Delivery and Payment</a>
+                </div>
+            </article>
+        </section>
+        <hr><br><br><br><br>
+
+        <h2 style="margin-left: 5px; margin-bottom: 2rem;">You might also like</h2>
+        <section class="featured-product__contaner">
+            <article class="featured-product__product">
+                <figure>
+                    <a href="product-details.html">
+                        <img src="./images/product/evan-mcdougall-qnh1odlqOmk-unsplash.jpeg" alt="product" width="500">
+                    </a>
+                    <figcaption class="featured-product__label">New Arrival</figcaption>
+                </figure>
+                <article class="featured-product-discription">
+                    <section >
+                        <a class="link-secondary" href="#">Tree pot</a>
+                        <p class="f-color-secondary">Original package design from house</p>
+                    </section>
+                    <p>$88</p>
+                </article>
+            </article>
+
+            <article class="featured-product__product">
+                <figure>
+                    <a href="product-details.html">
+                        <img src="./images/product/jordan-nix-CkCUvwMXAac-unsplash.jpeg" alt="product" width="500">
+                    </a>
+                    <figcaption class="featured-product__label">Low Price</figcaption>
+                </figure>
+
+                <article class="featured-product-discription">
+                    <section>
+                        <a class="link-secondary" href="#">Fashion Set</a>
+                        <p class="f-color-secondary">Costume Package</p>
+                    </section>
+                    <p>$90</p>
+                </article>
+            </article>
+            
+            <article class="featured-product__product">
+                <figure class="center">
+                    <a href="product-details.html">
+                        <img src="./images/product/nature-zen-3Dn1BZZv3m8-unsplash.jpeg" alt="product" width="500">
+                    </a>
+                    <figcaption class="featured-product__label">New Product</figcaption>
+                </figure>
+                <article  class="featured-product-discription">
+                    <section>
+                        <a class="link-secondary" href="#">Juice Drinks</a>
+                        <p  class="f-color-secondary">Nature made another world</p>
+                    </section>
+                    <p>$100</p>
+                </article>
+            </article>
+        </section>
+    </main>
+
+    <div class="overlay"> </div>
+    <div class="container">
+        <div class="product-card">
+            <div><button class="cancel-product-details">X</button></div>
+            <div class="cart-product-details middle" style="z-index: 102">
+                <figure>
+                    <img src="images/product/evan-mcdougall-qnh1odlqOmk-unsplash.jpeg" class="img-fluid product-image" alt>
+                </figure>
+                <section>
+                    <h2>Tree pot</h2>
+                    <ul>
+                        <p>$25</p>
+                        <p>Quantity: 4</p>
+                        <p>Colour: Black</p> 
+                        <p>Size: S/S</p>
+                    </ul>
+                    <br><hr><br>
+                    <p>Total: $100</p>
+                </section>
+            </div>
+            <br><hr>
+            <section class="checkout">
+                <section></section>
+                <button class="checkout__btn">Check Out</button>
+            </section>
+        </div>
+    </div>
+
+    <footer class="js-footer"></footer>
+
+    <script type="module" src="scripts/header.js"></script>
+    <script src="scripts/loadfooter.js"></script>
+
+    <script>
+        const addToCart = document.getElementById('add-to-cart');
+
+
+        addToCart.addEventListener('click' , (e) => {
+            const overlay = document.querySelector('.overlay');
+            const productCheckout = document.querySelector('.container');
+            // console.log(productCheckout)
+            const cancelProductDetails =  document.querySelector('.cancel-product-details');
+
+            overlay.classList.add('show');
+            productCheckout.classList.add('show');
+            
+            cancelProductDetails.removeEventListener('click', () => { cancel(productCheckout, overlay) });
+
+            cancelProductDetails.addEventListener('click', () => { cancel(productCheckout, overlay) });
+        });
+
+        function cancel(productCheckout, overlay) {
+            productCheckout.classList.remove('show');
+            overlay.classList.remove('show');
+        }
+        
+    </script>
+</body>
+</html>
+

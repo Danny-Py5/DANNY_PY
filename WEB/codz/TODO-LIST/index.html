@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Todo LIst</title>
+    <link rel="stylesheet" href="styles/todo.css">
+</head>
+<body>
+    <header>
+        <h1>Todo App</h1>
+    </header>
+
+    <main>
+        <article class="article">
+            <section class="input-container">
+                <input type="text" placeholder="Todo Name" name="todoname-input" id="todoname-input">
+                <input class="due-date-input" type="date" name="due-date-input" id="due-date-input" value="">
+                <button class="add-button js-add-button">Add</button>
+            </section>
+            
+            <section class="todos-container js-todos-container">
+                
+            </section>
+        </article>
+
+        <div class="popup" id="popup">
+            <p class="msg-content"></p>
+
+            <button class="popup__ok">Okay</button>
+        </div>
+
+        <!-- context menu elements / section -->
+        <div class="right-click-menu js-right-click-menu">
+            <ul class="right-click-menu__ul">
+                <li class="js-right-click-menu__li">Update todo</li>
+                <hr>
+                <li class="js-right-click-menu__li">Delete</li>
+            </ul>
+        </div>
+
+        <!-- todo update section/ elements -->
+        <!-- <div class="updating" id="updating">
+            <input class="updating-todo-input" type="text">
+            <input class="updating-todo-duedate" type="date" id="updating-todo-duedate">
+            <button class="save-changes js-save-changes">Save changes</button>
+        </div> -->
+    </main>
+    <script src="scripts/todo.js"></script>
+</body>
+</html>

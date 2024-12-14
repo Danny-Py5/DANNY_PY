@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tic-Tac-Toe</title>
+
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <main>
+        <button></button>
+        <button></button>
+        <button></button>
+        <button></button>
+        <button></button>
+        <button></button>
+        <button></button>
+        <button></button>
+        <button></button>
+    </main>
+
+    <script>
+        const allButtons = document.querySelectorAll('button')
+
+        let currentPlayer = 'X'
+
+        allButtons.forEach(button => {
+            button.addEventListener('click', () => {
+                if (currentPlayer == 'X' && !button.textContent){
+                    button.innerHTML = currentPlayer
+                    currentPlayer = '0';
+                } else {
+                    if (!button.textContent){
+                        button.innerHTML = currentPlayer
+                        currentPlayer = 'X';
+                    };
+                };
+                checkWin();
+            });
+        });
+        function checkWin(){
+            const winIndexs = [
+                [0, 1, 2],
+                [3, 4, 5],
+                [6, 7, 8],
+                
+            ]
+            winIndexs.forEach(winIndex => {
+                let field = 0;
+                let x = 0;
+                let o = 0;
+                for (let i of winIndex){
+                    if (allButtons[i].textContent === "X"){
+                        x += 1;
+                    } else if (allButtons[i].textContent === '0'){
+                        o += 1;
+                    }
+                }
+                [x, o].forEach(play => {
+                    if (play === 3){
+                        alert(play)
+                    };
+                })
+            })
+        }
+    </script>
+</body>
+</html>

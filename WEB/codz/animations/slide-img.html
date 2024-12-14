@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        :root{
+            --card-border-radius: 20px;
+        }
+        *{
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        .card{
+            background-color: rgb(255, 255, 255);
+            width: 200px;
+            height: 300px;
+            margin: 40% auto;
+            border-top-right-radius: var(--card-border-radius);
+            border-top-left-radius: var(--card-border-radius);
+            border: 1px solid rgba(195, 192, 192, 0.797);
+            display: flex;
+            flex-direction: column;
+            row-gap: 5px;
+            padding: 2px;
+        }
+        figure{
+            width: 100%;
+            height: 80%;
+            background-color: rgb(212, 215, 218);
+            overflow: hidden;
+            border-top-left-radius: 20px;
+            border-top-right-radius: 20px;
+            transition: .5s;
+            /* position: absolute; */
+        }
+        figure:hover{
+            box-shadow: 0 0 20px 0 rgb(219, 212, 212);
+        }
+        img{
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            object-position: top;
+            transition: all 1s;
+            transform: translateX(100%);
+            animation: slideInRight 1s ease-out;
+            animation-fill-mode: forwards;
+            /* position: absolute; */
+        }
+        .card-discription{
+            font: 1rem Arial;
+            display: flex;
+            padding: 0 5px;
+            flex-direction: column;
+        }
+        .card-discription .name {
+            font-weight: 700;
+        }
+        .card-discription .name ~ p{
+            font-size: .7rem;
+            color: grey;
+            margin-bottom: 10px;
+            margin-top: 3px;
+        }
+        .card-discription button{
+            padding: 8px;
+            background-color: rgb(8, 153, 158);
+            border: none;
+            border-radius: var(--card-border-radius);
+            margin-bottom: 10px;
+            color: white;
+            cursor: pointer;
+            transition: .5s;
+        }
+        .card-discription button:hover{
+            background-color: rgb(6, 110, 114);
+        }
+        @keyframes slideInRight {
+            to{transform: translateX(0);}
+        }
+        @keyframes slideOut {
+            from{
+                transform: translateX(0);
+            }
+            to{
+                transform: translateX(-100%);
+            }
+        }
+        .slideInRight{
+            animation: slideInRight 1s ease-out ;
+            animation-fill-mode: forwards;
+        }
+        .slideOut{
+            animation: slideOut 1s ease-out;
+            /* animation-fill-mode: backwards; */
+        }
+    </style>
+</head>
+<body>
+    <section class="card">
+        <figure>
+            <img src="./imgs/PhotoRoom-20240501_071523.png"  alt="" width="200">
+        </figure>
+        <section class="card-discription">
+            <p class="name">Daniel Fatokun</p>
+            <p>olatundedaniel943@gmail.com</p>
+            <button>Like</button>
+        </section>
+    </section>
+
+    <!-- <iframe src="./pop-img.html" frameborder="4" width="100%" height="500"></iframe> -->
+    
+    <script>
+        const imgsArray = [
+            './imgs/PhotoRoom-20240501_161343.png',
+            './imgs/PhotoRoom-20240501_071523.png',
+            './imgs/portrait-british-woman - Copy.jpeg'
+        ];
+
+        let currentImg = document.querySelector('img');
+        let i = 0;
+        // must not be 1000ms coz of the css time of animation
+        const slideChangeTime = 6000;
+
+        function slideImage(){
+            currentImg.classList.add('slideOut');
+            setTimeout(() => {
+                if (i === imgsArray.length){
+                    i = 0;
+                };
+                currentImg.setAttribute('src', imgsArray[i]);
+                i++;
+                currentImg.classList.remove('slideOut');
+                currentImg.classList.add('slideInRight');
+                setTimeout(() => {
+                    currentImg.classList.remove('slideInRight');
+                }, slideChangeTime)
+            }, 1000)
+        };
+        setInterval(slideImage, slideChangeTime);
+    </script>
+</body>
+</html>

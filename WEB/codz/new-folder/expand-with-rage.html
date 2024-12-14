@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>expand object</title>
+
+    <style>
+        :root{
+            --aside-width: 35%;
+        }
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+        body{
+            font: 1rem Arial;
+            background-color: rgb(18, 18, 18);
+            color: white;
+            padding-bottom: 1000px;
+            position: relative;
+            margin-left: var(--aside-width);
+        }
+        aside{
+            padding: 1rem .5rem;
+            background-color: rgba(140, 140, 140, 0.475);
+            position: fixed;
+            left: 0;
+            top: 0;
+            height: 100%;
+            width: var(--aside-width);
+        }
+
+        @media  (min-width: 800px){
+            :root{
+                --aside-width: 25%;
+            }
+        }
+        aside p {
+            display: flex;
+            margin-bottom: 20px;
+            column-gap: 10px;
+            flex-wrap: wrap;
+        }
+        aside p input{
+            display: inline;
+
+        }
+        aside :last-child :last-child{
+            background-color: transparent;
+            border: none;
+        }
+        .box{
+            width: 90px;
+            height: 50px;
+            background-color: #ff0000;
+            transition: all .4s;
+            position: fixed;
+        }
+        .increase-width, 
+        .increase-height{
+            width: 100%;
+        }
+
+    </style>
+</head>
+<body>
+    
+    <section>
+        <div class="box js-box"></div>
+        
+    </section>
+
+    <aside class="box-setting-cont">
+        <p>
+            <label for="width-range">Width:</label>
+            <input class="increase-width" type="range" name="increase-width" id="width-range">
+        </p>
+
+        <p>
+            <label on for="height-range">Height:</label>
+            <input class="increase-height" type="range" max="500" name="increase-height" id="height-range">
+        </p>
+        
+        <p>
+            <label for="color">Color: </label>
+            <input  type="color" id="color" value="#ff0000">
+        </p>
+    </aside>
+
+    <script>
+        var log = console.log;
+
+
+        let box = document.querySelector('.js-box');
+
+        let increaseWidth = document.querySelector('.increase-width');
+        let increaseHeight = document.querySelector('.increase-height');
+        let color = document.getElementById('color');
+        
+        document.addEventListener('DOMContentLoaded', () => {
+            box.style.width = setWidth();
+            box.style.height = setHeight();
+            box.style.backgroundColor = setCOlor();
+            // log(increaseHeight.value, increaseWidth.value, box);
+        });
+
+        function setWidth() {
+            increaseWidth.addEventListener('change', event => {
+            box.style.width =  `${increaseWidth.value}%`
+            });
+        };
+
+        function setHeight(){
+            increaseHeight.addEventListener('change', event => {
+            box.style.height = `${increaseHeight.value}px`
+            // log(`${increaseHeight.value}px`)
+            });
+        };
+
+        function setCOlor() {
+            color.addEventListener('change', event => {
+                box.style.backgroundColor =  `${color.value}`;
+                // log(color.value);
+            });
+        };
+
+        box.addEventListener('click', event => {
+            log('clientX', event.clientX);
+            log('ofsetX', event.offsetX)
+            log('clientY', event.clientY);
+        })
+
+        
+
+    </script>
+</body>
+</html>

@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Scroll items</title>
+
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body{
+            font: 1rem Arial;
+        }
+        .container{
+            display: flex;
+            width: 200px;
+            height: 200px;
+            /* background-color: lightpink; */
+            overflow-y: scroll;
+            scroll-snap-type: proximity;
+            gap: 1rem;
+            flex-direction: column; 
+            /* resize: both; */
+        }
+        .box{
+            min-width: 100%;
+            min-height: 100%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background-color: purple;
+            font-size: 4rem;
+            color: white;
+        }
+        /* for the x-axis */
+
+        /* .container{
+            display: flex;
+            width: 200px;
+            height: 200px;
+            background-color: lightpink;
+            overflow-x: scroll;
+            gap: 1rem;
+        }
+        .box{
+            min-width: 100%;
+            min-height: 100%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background-color: purple;
+            font-size: 4rem;
+            color: white;
+        } */
+
+
+        .box-red{
+            background-color: red;
+        }
+        .box-blue{
+            background-color: blue;
+        }
+    </style>
+</head>
+<header>
+    <h1>Scroll Items of a container</h1>
+</header>
+<body>
+    <section class="container">
+        <div class="box box-blue">1</div>
+        <div class="box">2</div>
+        <div class="box box-red">3</div>
+        <div class="box">4</div>
+        <div class="box box-blue">5</div>
+    </section>
+</body>
+</html>
