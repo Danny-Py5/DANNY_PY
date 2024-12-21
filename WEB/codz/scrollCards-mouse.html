@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Scrollable Card</title>
+  
+  
+  <style>
+    /* styles.css */
+    body {
+        margin: 0;
+        font-family: system-ui, sans-serif;
+        background-color: #f4f4f4;
+    }
+
+    .scroll-container {
+        margin-left: 300px;
+        display: flex; /* Layout cards in a row */
+        overflow-x: auto; /* Enable horizontal scrolling */
+        gap: 1rem; /* Space between cards */
+        padding: 1rem;
+        max-width: 100%;
+        margin: auto;
+        scroll-snap-type: x proximity;
+        background-color: indigo;
+        scrollbar-width: none; /* For Firefox: Hide scrollbar */
+    }
+
+    .scroll-container::-webkit-scrollbar {
+        display: none; /* For Chrome, Safari, Edge: Hide scrollbar */
+    }
+
+    .card {
+        min-width: 100%; /* Card size */
+        height: 150px;
+        background: #0077b5;
+        color: white;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        border-radius: 8px;
+        box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        cursor: grab; /* Show grab cursor */
+    }
+
+    .card:active {
+        cursor: grabbing; 
+    }
+  </style>
+</head>
+<body>
+  <div class="scroll-container">
+    <div class="card">Card 1</div>
+    <div class="card">Card 2</div>
+    <div class="card">Card 3</div>
+    <div class="card">Card 4</div>
+    <div class="card">Card 5</div>
+  </div>
+
+  <script>
+    function w(text){
+        document.write(text);
+    }
+    
+    const cardCont = document.querySelector('.scroll-container');
+
+    let mouseClickedPosition = undefined;
+    let scrollLeft = undefined;
+    let isDown = false;
+
+    cardCont.addEventListener('mousedown', function(event) {
+      isDown = true;
+      mouseClickedPosition = event.pageX;
+      scrollLeft = cardCont.scrollLeft;
+      // console.log(mouseClickedPosition);
+    });
+
+    cardCont.addEventListener('mousemove', function (event) {
+      if (!isDown) return;
+      event.preventDefault();
+      mouseDistanceMoved = event.pageX - mouseClickedPosition;
+      cardCont.scrollLeft = (scrollLeft - mouseDistanceMoved);
+    })
+
+    cardCont.addEventListener('mouseup', () => {
+        isDown = false;
+    });
+    cardCont.addEventListener('mouseleave', () => {
+        isDown = false;
+    });
+  </script>
+</body>
+</html>
